@@ -7,7 +7,12 @@
 **open source**
 
 <!-- contributions-start -->
-- [caelestia-dots/shell](https://github.com/caelestia-dots/shell) — quickshell-based hyprland desktop environment
+- **[caelestia-dots/cli](https://github.com/caelestia-dots/cli)** — The main control script for the Caelestia dotfiles
+  - pr: [#112](https://github.com/caelestia-dots/cli/pulls) untitled
+
+- **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — ‼️ No waybar here ‼️
+  - pr: [#1493](https://github.com/caelestia-dots/shell/pulls) untitled
+
 <!-- contributions-end -->
 
 ---
