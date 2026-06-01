@@ -21,7 +21,9 @@
 
 <div align="center">
 
-**Open source**
+**Open Source**
+
+</div>
 
 <!-- contributions-start -->
 - **[caelestia-dots/cli](https://github.com/caelestia-dots/cli)** — The main control script for the Caelestia dotfiles
@@ -31,8 +33,6 @@
   - pr: [#1493](https://github.com/caelestia-dots/shell/pull/1493) fix: prevent slider snapping back after seek
 
 <!-- contributions-end -->
-
-</div>
 
 <div align="center">
   <img src="./separator.svg" width="680"/>

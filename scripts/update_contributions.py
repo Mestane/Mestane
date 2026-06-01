@@ -10,13 +10,23 @@ HEADERS = {
     "Accept": "application/vnd.github+json",
 }
 
+MERGED_BADGE = "![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white)"
+OPEN_BADGE   = "![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white)"
+COMMIT_BADGE = "![commit](https://img.shields.io/badge/commit-1f6feb?style=flat&logo=git&logoColor=white)"
+
 def get_pr_details(repo_name, number):
     url = f"https://api.github.com/repos/{repo_name}/pulls/{number}"
     resp = requests.get(url, headers=HEADERS)
     if resp.status_code == 200:
         data = resp.json()
-        return data.get("title", ""), data.get("html_url", "")
-    return "", ""
+        return data.get("title", ""), data.get("html_url", ""), data.get("merged", False)
+    url2 = f"https://api.github.com/repos/{repo_name}/issues/{number}"
+    resp2 = requests.get(url2, headers=HEADERS)
+    if resp2.status_code == 200:
+        data = resp2.json()
+        merged = data.get("pull_request", {}).get("merged_at") is not None
+        return data.get("title", ""), data.get("html_url", ""), merged
+    return "", "", False
 
 def get_contributions():
     url = f"https://api.github.com/users/{USERNAME}/events/public"
@@ -45,7 +55,7 @@ def get_contributions():
                 msg = commit["message"].split("\n")[0][:72]
                 sha = commit["sha"][:7]
                 commit_url = f"https://github.com/{repo_name}/commit/{commit['sha']}"
-                entry = f"[`{sha}`]({commit_url}) {msg}"
+                entry = f"{COMMIT_BADGE} [`{sha}`]({commit_url}) {msg}"
                 if entry not in repos[repo_name]["commits"]:
                     repos[repo_name]["commits"].append(entry)
 
@@ -53,10 +63,11 @@ def get_contributions():
             number = event["payload"].get("number")
             if not number:
                 continue
-            title, pr_url = get_pr_details(repo_name, number)
+            title, pr_url, merged = get_pr_details(repo_name, number)
             if not title or not pr_url:
                 continue
-            entry = f"[#{number}]({pr_url}) {title[:72]}"
+            badge = MERGED_BADGE if merged else OPEN_BADGE
+            entry = f"{badge} [#{number}]({pr_url}) {title[:72]}"
             if entry not in repos[repo_name]["prs"]:
                 repos[repo_name]["prs"].append(entry)
 
@@ -80,7 +91,7 @@ def build_section(repos):
         lines.append(f"- **[{repo['name']}]({repo['url']})**{short}")
 
         for pr in repo["prs"][:2]:
-            lines.append(f"  - pr: {pr}")
+            lines.append(f"  - {pr}")
 
         for commit in repo["commits"][:3]:
             lines.append(f"  - {commit}")
@@ -106,4 +117,3 @@ if __name__ == "__main__":
     repos = get_contributions()
     section = build_section(repos)
     update_readme(section)
-
