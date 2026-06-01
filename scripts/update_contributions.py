@@ -43,10 +43,14 @@ def get_contributions():
 
         elif event["type"] == "PullRequestEvent":
             payload = event["payload"]
-            pr = payload.get("pull_request") or {}
-            title = (pr.get("title") or payload.get("title") or "untitled")[:72]
-            number = pr.get("number") or payload.get("number") or "?"
-            pr_url = pr.get("html_url") or f"https://github.com/{repo_name}/pulls"
+            pr = payload.get("pull_request", {})
+            title = pr.get("title", "")[:72] if pr.get("title") else ""
+            number = pr.get("number", "")
+            pr_url = pr.get("html_url", "")
+
+            if not title or not number or not pr_url:
+                continue
+
             entry = f"[#{number}]({pr_url}) {title}"
             if entry not in repos[repo_name]["prs"]:
                 repos[repo_name]["prs"].append(entry)
