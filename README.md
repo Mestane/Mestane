@@ -32,8 +32,7 @@
 
 | project | description | stack |
 |---|---|---|
-| `com.yeniabc.tl` | spring boot backend with jpa entities | java, kotlin, spring boot, maven |
-| [dotfiles](https://github.com/Mestane/dotfiles) | arch linux + hyprland configuration | lua, zsh |
+| [dotfiles](https://github.com/Mestane/HaLLaC_Hypr) | arch linux + hyprland configuration |zsh |
 
 <div align="center">
   <img src="./separator.svg" width="680"/>
@@ -42,7 +41,7 @@
 **Tech**
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=java,kotlin,spring,linux,arch,neovim,git,docker&perline=8" />
+  <img src="https://skillicons.dev/icons?i=java,kotlin,python,spring,linux,arch,neovim,git,docker&perline=9" />
 </div>
 
 <br/>
