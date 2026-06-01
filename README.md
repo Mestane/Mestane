@@ -20,9 +20,13 @@
 
 **Open source**
 
+<div align="center">
+
 <!-- contributions-start -->
 - [caelestia-dots/shell](https://github.com/caelestia-dots/shell) — quickshell-based hyprland desktop environment
 <!-- contributions-end -->
+
+</div>
 
 <div align="center">
   <img src="./separator.svg" width="680"/>
@@ -30,9 +34,12 @@
 
 **Projects**
 
+<div align="center">
+
 | project | description | stack |
 |---|---|---|
-| [dotfiles](https://github.com/Mestane/HaLLaC_Hypr) | arch linux + hyprland configuration |zsh |
+| [dotfiles](https://github.com/Mestane/HaLLaC_Hypr) | arch linux + hyprland configuration | zsh |
+
 
 <div align="center">
   <img src="./separator.svg" width="680"/>
@@ -42,12 +49,6 @@
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=java,kotlin,python,spring,linux,arch,neovim,git,docker&perline=9" />
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mestane&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e" />
 </div>
 
 <div align="center">
@@ -69,4 +70,3 @@
 [![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Mestane&theme=github-compact&hide_border=true&bg_color=00000000&color=58a6ff&line=58a6ff&point=ffffff)](https://github.com/Ashutosh00710/github-readme-activity-graph)
 
 </div>
-
