@@ -44,11 +44,19 @@ def get_contributions():
         elif event["type"] == "PullRequestEvent":
             payload = event["payload"]
             pr = payload.get("pull_request", {})
-            title = pr.get("title", "")[:72] if pr.get("title") else ""
+
+            print(f"DEBUG PR payload keys: {list(payload.keys())}")
+            print(f"DEBUG pr keys: {list(pr.keys()) if pr else 'empty'}")
+            print(f"DEBUG title: {pr.get('title')}")
+            print(f"DEBUG html_url: {pr.get('html_url')}")
+            print(f"DEBUG number: {pr.get('number')}")
+
+            title = (pr.get("title") or "")[:72]
             number = pr.get("number", "")
             pr_url = pr.get("html_url", "")
 
             if not title or not number or not pr_url:
+                print(f"DEBUG skipping PR — missing fields")
                 continue
 
             entry = f"[#{number}]({pr_url}) {title}"
