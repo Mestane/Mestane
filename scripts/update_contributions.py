@@ -47,7 +47,8 @@ def get_contributions():
                 "name": repo_name,
                 "url": f"https://github.com/{repo_name}",
                 "commits": [],
-                "prs": [],
+                "merged_prs": [],
+                "open_prs": [],
             }
 
         if event["type"] == "PushEvent":
@@ -66,10 +67,14 @@ def get_contributions():
             title, pr_url, merged = get_pr_details(repo_name, number)
             if not title or not pr_url:
                 continue
-            badge = MERGED_BADGE if merged else OPEN_BADGE
-            entry = f"{badge} [#{number}]({pr_url}) {title[:72]}"
-            if entry not in repos[repo_name]["prs"]:
-                repos[repo_name]["prs"].append(entry)
+            if merged:
+                entry = f"{MERGED_BADGE} [#{number}]({pr_url}) {title[:72]}"
+                if entry not in repos[repo_name]["merged_prs"]:
+                    repos[repo_name]["merged_prs"].append(entry)
+            else:
+                entry = f"{OPEN_BADGE} [#{number}]({pr_url}) {title[:72]}"
+                if entry not in repos[repo_name]["open_prs"]:
+                    repos[repo_name]["open_prs"].append(entry)
 
     return list(repos.values())[:5]
 
@@ -90,7 +95,10 @@ def build_section(repos):
         short = f" — {desc}" if desc else ""
         lines.append(f"- **[{repo['name']}]({repo['url']})**{short}")
 
-        for pr in repo["prs"][:2]:
+        for pr in repo["merged_prs"][:3]:   # son 3 merged
+            lines.append(f"  - {pr}")
+
+        for pr in repo["open_prs"][:2]:     # son 2 open pr
             lines.append(f"  - {pr}")
 
         for commit in repo["commits"][:3]:
