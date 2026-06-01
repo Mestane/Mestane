@@ -2,42 +2,66 @@
   <img src="./head.svg" width="680"/>
 </div>
 
----
+<div align="center">
+  <img src="./separator.svg" width="680"/>
+</div>
 
-**open source**
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ilyas-erdo%C4%9Fan-b70b6214a/)
+[![GitHub](https://img.shields.io/badge/github-%23181717.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mestane)
+[![Mail](https://img.shields.io/badge/mail-%23EA4335.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:erdgn.ilyas@hotmail.com)
+
+</div>
+
+<div align="center">
+  <img src="./separator.svg" width="680"/>
+</div>
+
+**Open source**
 
 <!-- contributions-start -->
-- **[caelestia-dots/cli](https://github.com/caelestia-dots/cli)** — The main control script for the Caelestia dotfiles
-  - pr: [#112](https://github.com/caelestia-dots/cli/pull/112) fix: Lua dispatcher compat
-
-- **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — ‼️ No waybar here ‼️
-  - pr: [#1493](https://github.com/caelestia-dots/shell/pull/1493) fix: prevent slider snapping back after seek
-
+- [caelestia-dots/shell](https://github.com/caelestia-dots/shell) — quickshell-based hyprland desktop environment
 <!-- contributions-end -->
 
----
+<div align="center">
+  <img src="./separator.svg" width="680"/>
+</div>
 
-**projects**
+**Projects**
 
 | project | description | stack |
 |---|---|---|
-| [dotfiles](https://github.com/Mestane/HaLLaC_Hypr) | arch linux + hyprland configuration | zsh |
-
----
-
-**tech**
+| `com.yeniabc.tl` | spring boot backend with jpa entities | java, kotlin, spring boot, maven |
+| [dotfiles](https://github.com/Mestane/dotfiles) | arch linux + hyprland configuration | lua, zsh |
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=java,kotlin,python,spring,linux,arch,neovim,git,docker&perline=9" />
+  <img src="./separator.svg" width="680"/>
 </div>
 
----
+**Tech**
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=java,kotlin,spring,linux,arch,neovim,git,docker&perline=8" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mestane&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e" />
+</div>
+
+<div align="center">
+  <img src="./separator.svg" width="680"/>
+</div>
 
 <div align="center">
   <img src="./setup.svg" width="680"/>
 </div>
 
----
+<div align="center">
+  <img src="./separator.svg" width="680"/>
+</div>
 
 <div align="center">
 
