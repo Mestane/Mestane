@@ -18,9 +18,10 @@
   <img src="./separator.svg" width="680"/>
 </div>
 
-**Open source**
 
 <div align="center">
+
+**Open source**
 
 <!-- contributions-start -->
 - [caelestia-dots/shell](https://github.com/caelestia-dots/shell) — quickshell-based hyprland desktop environment
@@ -32,9 +33,11 @@
   <img src="./separator.svg" width="680"/>
 </div>
 
-**Projects**
 
 <div align="center">
+
+**Projects**
+
 
 | project | description | stack |
 |---|---|---|
