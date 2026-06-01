@@ -10,6 +10,14 @@ HEADERS = {
     "Accept": "application/vnd.github+json",
 }
 
+def get_pr_details(repo_name, number):
+    url = f"https://api.github.com/repos/{repo_name}/pulls/{number}"
+    resp = requests.get(url, headers=HEADERS)
+    if resp.status_code == 200:
+        data = resp.json()
+        return data.get("title", ""), data.get("html_url", "")
+    return "", ""
+
 def get_contributions():
     url = f"https://api.github.com/users/{USERNAME}/events/public"
     resp = requests.get(url, headers=HEADERS, params={"per_page": 100})
@@ -42,24 +50,13 @@ def get_contributions():
                     repos[repo_name]["commits"].append(entry)
 
         elif event["type"] == "PullRequestEvent":
-            payload = event["payload"]
-            pr = payload.get("pull_request", {})
-
-            print(f"DEBUG PR payload keys: {list(payload.keys())}")
-            print(f"DEBUG pr keys: {list(pr.keys()) if pr else 'empty'}")
-            print(f"DEBUG title: {pr.get('title')}")
-            print(f"DEBUG html_url: {pr.get('html_url')}")
-            print(f"DEBUG number: {pr.get('number')}")
-
-            title = (pr.get("title") or "")[:72]
-            number = pr.get("number", "")
-            pr_url = pr.get("html_url", "")
-
-            if not title or not number or not pr_url:
-                print(f"DEBUG skipping PR — missing fields")
+            number = event["payload"].get("number")
+            if not number:
                 continue
-
-            entry = f"[#{number}]({pr_url}) {title}"
+            title, pr_url = get_pr_details(repo_name, number)
+            if not title or not pr_url:
+                continue
+            entry = f"[#{number}]({pr_url}) {title[:72]}"
             if entry not in repos[repo_name]["prs"]:
                 repos[repo_name]["prs"].append(entry)
 
