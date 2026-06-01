@@ -8,8 +8,10 @@
 
 <!-- contributions-start -->
 - **[caelestia-dots/cli](https://github.com/caelestia-dots/cli)** — The main control script for the Caelestia dotfiles
+  - pr: [#112](https://github.com/caelestia-dots/cli/pull/112) fix: Lua dispatcher compat
 
 - **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — ‼️ No waybar here ‼️
+  - pr: [#1493](https://github.com/caelestia-dots/shell/pull/1493) fix: prevent slider snapping back after seek
 
 <!-- contributions-end -->
 
