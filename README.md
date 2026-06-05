@@ -28,12 +28,12 @@
 <!-- contributions-start -->
 - **[caelestia-dots/cli](https://github.com/caelestia-dots/cli)** — The main control script for the Caelestia dotfiles
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#112](https://github.com/caelestia-dots/cli/pull/112) fix: Lua dispatcher compat
+  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#115](https://github.com/caelestia-dots/cli/pull/115) fix: special workspace toggle for IPC-spawned windows
 
 - **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — ‼️ No waybar here ‼️
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1359](https://github.com/caelestia-dots/shell/pull/1359) LyricsView remains visible when the media player is closed
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1370](https://github.com/caelestia-dots/shell/pull/1370) Fix/minor issues
   - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1493](https://github.com/caelestia-dots/shell/pull/1493) fix: prevent slider snapping back after seek
-  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#874](https://github.com/caelestia-dots/shell/pull/874) feat: added shortcut and toast notification for users who set utiliti…
 
 <!-- contributions-end -->
 
