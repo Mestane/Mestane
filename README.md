@@ -33,6 +33,8 @@
 - **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — A fluid, morphing shell for your Linux desktop
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1359](https://github.com/caelestia-dots/shell/pull/1359) LyricsView remains visible when the media player is closed
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1370](https://github.com/caelestia-dots/shell/pull/1370) Fix/minor issues
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1347](https://github.com/caelestia-dots/shell/pull/1347) fix: YouTube thumbnail fallback for missing mpris:artUrl
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1232](https://github.com/caelestia-dots/shell/pull/1232) fix: unify wifi toggle state with Nmcli service to prevent desync
   - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1493](https://github.com/caelestia-dots/shell/pull/1493) fix: prevent slider snapping back after seek
 
 <!-- contributions-end -->
