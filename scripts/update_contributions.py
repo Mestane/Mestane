@@ -20,7 +20,7 @@ def get_merged_prs():
         "q": f"is:pr is:merged author:{USERNAME} -user:{USERNAME}",
         "sort": "updated",
         "order": "desc",
-        "per_page": 3,
+        "per_page": 6,  # last 6 merged PRs
     }
     resp = requests.get(url, headers=HEADERS, params=params)
     resp.raise_for_status()
