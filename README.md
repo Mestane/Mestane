@@ -30,7 +30,7 @@
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#112](https://github.com/caelestia-dots/cli/pull/112) fix: Lua dispatcher compat
   - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#115](https://github.com/caelestia-dots/cli/pull/115) fix: special workspace toggle for IPC-spawned windows
 
-- **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — ‼️ No waybar here ‼️
+- **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — A fluid, morphing shell for your Linux desktop
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1359](https://github.com/caelestia-dots/shell/pull/1359) LyricsView remains visible when the media player is closed
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1370](https://github.com/caelestia-dots/shell/pull/1370) Fix/minor issues
   - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1493](https://github.com/caelestia-dots/shell/pull/1493) fix: prevent slider snapping back after seek
