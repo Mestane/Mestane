@@ -34,8 +34,8 @@
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1370](https://github.com/caelestia-dots/shell/pull/1370) Fix/minor issues
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1347](https://github.com/caelestia-dots/shell/pull/1347) fix: YouTube thumbnail fallback for missing mpris:artUrl
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1232](https://github.com/caelestia-dots/shell/pull/1232) fix: unify wifi toggle state with Nmcli service to prevent desync
+  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1553](https://github.com/caelestia-dots/shell/pull/1553) fix(internal): add usingLua to HyprExtras for idle action gating
   - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1539](https://github.com/caelestia-dots/shell/pull/1539) fix(media): click-to-seek on position slider and volume slider in audio 
-  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1493](https://github.com/caelestia-dots/shell/pull/1493) fix: prevent slider snapping back after seek
 
 <!-- contributions-end -->
 
