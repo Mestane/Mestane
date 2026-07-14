@@ -27,13 +27,13 @@
 
 <!-- contributions-start -->
 - **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — A fluid, morphing shell for your Linux desktop
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1602](https://github.com/caelestia-dots/shell/pull/1602) Feat/ethernet section
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1539](https://github.com/caelestia-dots/shell/pull/1539) fix(media): click-to-seek on position slider and volume slider in audio 
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1553](https://github.com/caelestia-dots/shell/pull/1553) fix(internal): add usingLua to HyprExtras for idle action gating
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1359](https://github.com/caelestia-dots/shell/pull/1359) LyricsView remains visible when the media player is closed
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1370](https://github.com/caelestia-dots/shell/pull/1370) Fix/minor issues
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1347](https://github.com/caelestia-dots/shell/pull/1347) fix: YouTube thumbnail fallback for missing mpris:artUrl
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1232](https://github.com/caelestia-dots/shell/pull/1232) fix: unify wifi toggle state with Nmcli service to prevent desync
-  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1602](https://github.com/caelestia-dots/shell/pull/1602) Feat/ethernet section
-  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1601](https://github.com/caelestia-dots/shell/pull/1601) feat: responsive 2-column Wi-Fi list on wide panels
+  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1639](https://github.com/caelestia-dots/shell/pull/1639) Feat/indexing UI
+  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1605](https://github.com/caelestia-dots/shell/pull/1605) feat: VPN section with provider management and live stats
 
 - **[caelestia-dots/cli](https://github.com/caelestia-dots/cli)** — The main control script for the Caelestia dotfiles
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#112](https://github.com/caelestia-dots/cli/pull/112) fix: Lua dispatcher compat
