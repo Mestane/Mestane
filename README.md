@@ -27,13 +27,15 @@
 
 <!-- contributions-start -->
 - **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — A fluid, morphing shell for your Linux desktop
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1605](https://github.com/caelestia-dots/shell/pull/1605) feat: VPN section with provider management and live stats
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1604](https://github.com/caelestia-dots/shell/pull/1604) feat: hidden networks, per-network settings and IPv4 config
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1602](https://github.com/caelestia-dots/shell/pull/1602) Feat/ethernet section
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1539](https://github.com/caelestia-dots/shell/pull/1539) fix(media): click-to-seek on position slider and volume slider in audio 
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1553](https://github.com/caelestia-dots/shell/pull/1553) fix(internal): add usingLua to HyprExtras for idle action gating
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1359](https://github.com/caelestia-dots/shell/pull/1359) LyricsView remains visible when the media player is closed
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1370](https://github.com/caelestia-dots/shell/pull/1370) Fix/minor issues
   - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1639](https://github.com/caelestia-dots/shell/pull/1639) Feat/indexing UI
-  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1605](https://github.com/caelestia-dots/shell/pull/1605) feat: VPN section with provider management and live stats
+  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1657](https://github.com/caelestia-dots/shell/pull/1657) feat:Add item icons (About page)
 
 - **[caelestia-dots/cli](https://github.com/caelestia-dots/cli)** — The main control script for the Caelestia dotfiles
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#112](https://github.com/caelestia-dots/cli/pull/112) fix: Lua dispatcher compat
