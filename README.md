@@ -26,19 +26,21 @@
 </div>
 
 <!-- contributions-start -->
-- **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — A fluid, morphing shell for your Linux desktop
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1605](https://github.com/caelestia-dots/shell/pull/1605) feat: VPN section with provider management and live stats
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1604](https://github.com/caelestia-dots/shell/pull/1604) feat: hidden networks, per-network settings and IPv4 config
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1602](https://github.com/caelestia-dots/shell/pull/1602) Feat/ethernet section
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1539](https://github.com/caelestia-dots/shell/pull/1539) fix(media): click-to-seek on position slider and volume slider in audio 
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1553](https://github.com/caelestia-dots/shell/pull/1553) fix(internal): add usingLua to HyprExtras for idle action gating
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1359](https://github.com/caelestia-dots/shell/pull/1359) LyricsView remains visible when the media player is closed
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1370](https://github.com/caelestia-dots/shell/pull/1370) Fix/minor issues
-  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1639](https://github.com/caelestia-dots/shell/pull/1639) Feat/indexing UI
-  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1657](https://github.com/caelestia-dots/shell/pull/1657) feat:Add item icons (About page)
-
 - **[caelestia-dots/cli](https://github.com/caelestia-dots/cli)** — The main control script for the Caelestia dotfiles
-  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#112](https://github.com/caelestia-dots/cli/pull/112) fix: Lua dispatcher compat
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#173](https://github.com/caelestia-dots/cli/pull/173) fix(record): don't block on stopped notification
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#172](https://github.com/caelestia-dots/cli/pull/172) fix: recorder
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#171](https://github.com/caelestia-dots/cli/pull/171) fix: don't let slurp wait on inherited stdin
+
+- **[caelestia-dots/shell](https://github.com/caelestia-dots/shell)** — A fluid, morphing shell for your Linux desktop
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1997](https://github.com/caelestia-dots/shell/pull/1997) fix: last row
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1864](https://github.com/caelestia-dots/shell/pull/1864) fix: filter out container virtual interfaces from the ethernet list
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1891](https://github.com/caelestia-dots/shell/pull/1891) fix(dashboard): don't let the hidden lyrics list take clicks
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#1605](https://github.com/caelestia-dots/shell/pull/1605) feat: VPN section with provider management and live stats
+  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#1639](https://github.com/caelestia-dots/shell/pull/1639) feat: indexing UI
+  - ![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white) [#2047](https://github.com/caelestia-dots/shell/pull/2047) fix: utilities record count
+
+- **[saghen/blink.cmp](https://github.com/saghen/blink.cmp)** — Performant, batteries-included completion plugin for Neovim 
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#2617](https://github.com/saghen/blink.cmp/pull/2617) docs: add blink-cmp-deps community source for Maven
 
 <!-- contributions-end -->
 
