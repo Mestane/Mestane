@@ -80,9 +80,3 @@
 <div align="center">
   <img src="./separator.svg" width="680"/>
 </div>
-
-<div align="center">
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Mestane&theme=github-compact&hide_border=true&bg_color=00000000&color=58a6ff&line=58a6ff&point=ffffff)](https://github.com/Ashutosh00710/github-readme-activity-graph)
-
-</div>
