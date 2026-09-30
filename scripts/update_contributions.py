@@ -10,136 +10,161 @@ HEADERS = {
     "Accept": "application/vnd.github+json",
 }
 
-MERGED_BADGE = "![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white)"
-OPEN_BADGE   = "![pr](https://img.shields.io/badge/pr-238636?style=flat&logo=git-pull-request&logoColor=white)"
-COMMIT_BADGE = "![commit](https://img.shields.io/badge/commit-1f6feb?style=flat&logo=git&logoColor=white)"
+MERGED_BADGE = (
+    "![merged](https://img.shields.io/badge/"
+    "merged-8250df?style=flat&logo=git-merge&logoColor=white)"
+)
+
+VISIBLE_PR_COUNT = 6
+
 
 def get_merged_prs():
+    """
+    Get merged PRs authored by USERNAME and group them by repository.
+
+    GitHub Search API has a maximum accessible result window of 1000
+    results, so we paginate through up to 10 pages with 100 results each.
+    """
+
     url = "https://api.github.com/search/issues"
-    params = {
-        "q": f"is:pr is:merged author:{USERNAME} -user:{USERNAME}",
-        "sort": "updated",
-        "order": "desc",
-        "per_page": 8,  # last 6 merged PRs
-    }
-    resp = requests.get(url, headers=HEADERS, params=params)
-    resp.raise_for_status()
-    results = []
-    for item in resp.json().get("items", []):
-        repo_name = item["repository_url"].replace("https://api.github.com/repos/", "")
-        results.append({
-            "repo": repo_name,
-            "entry": f"{MERGED_BADGE} [#{item['number']}]({item['html_url']}) {item['title'][:72]}",
-        })
-    return results
 
-def get_open_prs():
-    url = "https://api.github.com/search/issues"
-    params = {
-        "q": f"is:pr is:open author:{USERNAME} -user:{USERNAME}",
-        "sort": "updated",
-        "order": "desc",
-        "per_page": 2,
-    }
-    resp = requests.get(url, headers=HEADERS, params=params)
-    resp.raise_for_status()
-    results = []
-    for item in resp.json().get("items", []):
-        repo_name = item["repository_url"].replace("https://api.github.com/repos/", "")
-        results.append({
-            "repo": repo_name,
-            "entry": f"{OPEN_BADGE} [#{item['number']}]({item['html_url']}) {item['title'][:72]}",
-        })
-    return results
+    all_prs = []
 
-def get_recent_commits():
-    url = f"https://api.github.com/users/{USERNAME}/events/public"
-    resp = requests.get(url, headers=HEADERS, params={"per_page": 100})
-    resp.raise_for_status()
+    for page in range(1, 11):
+        params = {
+            "q": f"is:pr is:merged author:{USERNAME} -user:{USERNAME}",
+            "sort": "updated",
+            "order": "desc",
+            "per_page": 100,
+            "page": page,
+        }
 
+        resp = requests.get(url, headers=HEADERS, params=params)
+        resp.raise_for_status()
+
+        items = resp.json().get("items", [])
+
+        if not items:
+            break
+
+        for item in items:
+            repo_name = item["repository_url"].replace(
+                "https://api.github.com/repos/",
+                ""
+            )
+
+            entry = (
+                f"{MERGED_BADGE} "
+                f"[#{item['number']}]({item['html_url']}) "
+                f"{item['title'][:72]}"
+            )
+
+            all_prs.append(
+                {
+                    "repo": repo_name,
+                    "entry": entry,
+                    "updated_at": item.get("updated_at", ""),
+                }
+            )
+
+        if len(items) < 100:
+            break
+
+    # Repo bazında grupla
     repos = {}
-    for event in resp.json():
-        if event["type"] != "PushEvent":
-            continue
-        repo_name = event["repo"]["name"]
-        owner = repo_name.split("/")[0]
-        if owner == USERNAME:
-            continue
+
+    for item in all_prs:
+        repo_name = item["repo"]
+
         if repo_name not in repos:
             repos[repo_name] = []
-        for commit in event["payload"].get("commits", [])[:2]:
-            msg = commit["message"].split("\n")[0][:72]
-            sha = commit["sha"][:7]
-            commit_url = f"https://github.com/{repo_name}/commit/{commit['sha']}"
-            entry = f"{COMMIT_BADGE} [`{sha}`]({commit_url}) {msg}"
-            if entry not in repos[repo_name]:
-                repos[repo_name].append(entry)
+
+        repos[repo_name].append(item)
+
     return repos
+
 
 def get_repo_description(full_name):
     url = f"https://api.github.com/repos/{full_name}"
+
     resp = requests.get(url, headers=HEADERS)
+
     if resp.status_code == 200:
         return resp.json().get("description") or ""
+
     return ""
 
-def build_section(merged_prs, open_prs, commit_repos):
-    # repo başına grupla
-    repos = {}
 
-    for item in merged_prs:
-        r = item["repo"]
-        if r not in repos:
-            repos[r] = {"merged": [], "open": [], "commits": []}
-        repos[r]["merged"].append(item["entry"])
-
-    for item in open_prs:
-        r = item["repo"]
-        if r not in repos:
-            repos[r] = {"merged": [], "open": [], "commits": []}
-        repos[r]["open"].append(item["entry"])
-
-    for r, commits in commit_repos.items():
-        if r not in repos:
-            repos[r] = {"merged": [], "open": [], "commits": []}
-        repos[r]["commits"] = commits[:3]
-
-    if not repos:
+def build_section(merged_repos):
+    if not merged_repos:
         return "no recent public contributions found.\n"
 
     lines = []
-    for repo_name, data in repos.items():
+
+    for repo_name, prs in merged_repos.items():
         desc = get_repo_description(repo_name)
         short = f" — {desc}" if desc else ""
-        lines.append(f"- **[{repo_name}](https://github.com/{repo_name})**{short}")
 
-        for pr in data["merged"]:
-            lines.append(f"  - {pr}")
-        for pr in data["open"]:
-            lines.append(f"  - {pr}")
-        for commit in data["commits"]:
-            lines.append(f"  - {commit}")
+        lines.append(
+            f"- **[{repo_name}](https://github.com/{repo_name})**{short}"
+        )
+
+        visible_prs = prs[:VISIBLE_PR_COUNT]
+        hidden_prs = prs[VISIBLE_PR_COUNT:]
+
+        # İlk 6 PR direkt görünür
+        for pr in visible_prs:
+            lines.append(f"  - {pr['entry']}")
+
+        # 6'dan sonraki PR'lar dropdown içinde
+        if hidden_prs:
+            lines.append("")
+            lines.append(
+                f"  <details>"
+            )
+            lines.append(
+                f"  <summary>Show more merged PRs "
+                f"({len(hidden_prs)})</summary>"
+            )
+            lines.append("")
+
+            for pr in hidden_prs:
+                lines.append(f"  - {pr['entry']}")
+
+            lines.append("")
+            lines.append("  </details>")
 
         lines.append("")
 
     return "\n".join(lines)
 
+
 def update_readme(section_content):
-    with open("README.md", "r") as f:
+    with open("README.md", "r", encoding="utf-8") as f:
         content = f.read()
 
     pattern = r"(<!-- contributions-start -->).*?(<!-- contributions-end -->)"
-    replacement = f"<!-- contributions-start -->\n{section_content}\n<!-- contributions-end -->"
-    new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
-    with open("README.md", "w") as f:
+    replacement = (
+        f"<!-- contributions-start -->\n"
+        f"{section_content}\n"
+        f"<!-- contributions-end -->"
+    )
+
+    new_content = re.sub(
+        pattern,
+        replacement,
+        content,
+        flags=re.DOTALL,
+    )
+
+    with open("README.md", "w", encoding="utf-8") as f:
         f.write(new_content)
 
     print("README.md updated.")
 
+
 if __name__ == "__main__":
-    merged_prs = get_merged_prs()
-    open_prs = get_open_prs()
-    commit_repos = get_recent_commits()
-    section = build_section(merged_prs, open_prs, commit_repos)
+    merged_repos = get_merged_prs()
+    section = build_section(merged_repos)
     update_readme(section)
