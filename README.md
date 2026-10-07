@@ -26,6 +26,9 @@
 </div>
 
 <!-- contributions-start -->
+- **[cykler01/cykler-caelestia](https://github.com/cykler01/cykler-caelestia)** — My personal Caelestia shell build with certain added features. (unstable)
+  - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#4](https://github.com/cykler01/cykler-caelestia/pull/4) feat: phone integration via kde connect
+
 - **[caelestia-dots/cli](https://github.com/caelestia-dots/cli)** — The main control script for the Caelestia dotfiles
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#173](https://github.com/caelestia-dots/cli/pull/173) fix(record): don't block on stopped notification
   - ![merged](https://img.shields.io/badge/merged-8250df?style=flat&logo=git-merge&logoColor=white) [#172](https://github.com/caelestia-dots/cli/pull/172) fix: recorder
